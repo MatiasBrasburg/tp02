@@ -1,5 +1,5 @@
-// Cita.jsx
-import './Cita.css'; // Movemos solo los estilos de la tarjeta a este archivo
+
+import './Cita.css'; 
 
 function Cita({ mascota, duenio, fecha, hora, sintomas }) {
   return (
@@ -9,7 +9,9 @@ function Cita({ mascota, duenio, fecha, hora, sintomas }) {
       <p>Fecha: <span>{fecha}</span></p>
       <p>Hora: <span>{hora}</span></p>
       <p>Sintomas: <span>{sintomas}</span></p>
-      <button className="button eliminar u-full-width">Eliminar ×</button>
+      <Buttom
+      Contenido = "Eliminar"
+      />
     </div>
   );
 }

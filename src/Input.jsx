@@ -1,4 +1,4 @@
-import './Formulario.css'; // Movemos solo los estilos de la tarjeta a este archivo
+import './Formulario.css'; 
 
 function Input({ ContenidoInput }) {
   return (

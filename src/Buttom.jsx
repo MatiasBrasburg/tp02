@@ -2,7 +2,7 @@ import './Formulario.css'; // Movemos solo los estilos de la tarjeta a este arch
 
 function Buttom({ Contenido }) {
   return (
-   <button type="submit" className="u-full-width button-primary">Contenido</button>
+   <button type="submit" className="u-full-width button-primary">{Contenido}</button>
   );
 }
 

@@ -1,4 +1,4 @@
-import './Titulo.css'; // Movemos solo los estilos de la tarjeta a este archivo
+import './Titulo.css'; 
 
 function NosScript({ Contenido }) {
   return (

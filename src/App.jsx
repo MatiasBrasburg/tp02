@@ -37,11 +37,11 @@ function App() {
       />
           </div>
             <Cita
-            Mascota ="jojo"
-            Dueño = "Franco"
-            Fecha = '12/05/2005'
-            Hora = "12:10"
-            Sintomas = "dolor de panza"
+            mascota ="jojo"
+            duenio = "Franco"
+            fecha = '12/05/2005'
+            hora = "12:10"
+            sintomas = "dolor de panza"
             />
 
                
