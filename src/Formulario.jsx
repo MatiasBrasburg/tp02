@@ -17,13 +17,13 @@ function Formulario({ ContenidoH2, Label1, Label2, Label3, Label4, LabelFecha })
                 <Input ContenidoInput={Label2} />
                
                  <label>{LabelFecha}</label>
-                <InputFecha ContenidoInput="Fecha" />
+                <InputFecha ContenidoInput={LabelFecha} />
 
                 <label>{Label3}</label>
-                <InputHora ContenidoInput="Hora" />
+                <InputHora ContenidoInput={Label3} />
                 
                 <label>{Label4}</label>
-                <InputTextarea ContenidoInput="Sintomas" />
+                <InputTextarea ContenidoInput={Label4} />
                 
                 <Buttom Contenido="Agregar Cita" />
             </form>
