@@ -5,6 +5,8 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Titulo from './Titulo'
 import NosScript from './NosScpipt'
+import Formulario from './Formulario';
+import Cita from './Cita';
 
 function App() {
   const [count, setCount] = useState(0)

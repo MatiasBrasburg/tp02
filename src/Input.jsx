@@ -6,4 +6,4 @@ function Input({ ContenidoInput }) {
   );
 }
 
-export default NosScript;
+export default Input;

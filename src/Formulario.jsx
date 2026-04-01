@@ -1,4 +1,9 @@
-import './Formulario.css'; // Movemos solo los estilos de la tarjeta a este archivo
+import './Formulario.css'; 
+
+import Input from './Input';
+import InputHora from './InputHora';
+import InputTextarea from './InputTextarea';
+import Buttom from './Buttom';
 
 function Formulario({ ContenidoH2, Label1, Label2, Label3, Label4 }) {
     return (
@@ -17,7 +22,7 @@ function Formulario({ ContenidoH2, Label1, Label2, Label3, Label4 }) {
                         />
                        
                         <label>{Label3}</label>
-                        <inputHora
+                        <InputHora
                         ContenidoInput = "Hora"
                         />
                         <label>{Label4}</label>

@@ -1,6 +1,8 @@
 
 import './Cita.css'; 
 
+import Buttom from './Buttom';
+
 function Cita({ mascota, duenio, fecha, hora, sintomas }) {
   return (
     <div className="cita">
