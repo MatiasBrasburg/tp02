@@ -2,7 +2,7 @@ import './Formulario.css';
 
 function InputHora({ ContenidoInput }) {
   return (
-  <input type="hora" name={ContenidoInput} className="u-full-width" placeholder={ContenidoInput}></input>
+  <input type="time" name={ContenidoInput} className="u-full-width" placeholder={ContenidoInput}></input>
   );
 }
 

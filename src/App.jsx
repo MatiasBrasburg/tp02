@@ -1,10 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 import Titulo from './Titulo'
-import NosScript from './NosScpipt'
 import Formulario from './Formulario';
 import Cita from './Cita';
 
@@ -13,61 +9,52 @@ function App() {
 
   return (
     <>
-    
-    <Titulo
-    Contenido="Gestor de Citas"
-    />
-    
+      <Titulo Contenido="ADMINISTRADOR DE PACIENTES" /> 
 
-    <NosScript
-    Contenido="You need to enable JavaScript to run this app."
-    />
-
-
-    <div id="root">
-      <Titulo
-      Contenido="ADMINISTRADOR DE PACIENTES"
-      /> 
-
-      <Formulario
-      ContenidoH2 = "Crear mi Cita"
-      Label1 = "Nombre Mascota"
-      Label2 = "Nombre Dueño"
-      Label3 = "hora"
-      Label4 = "Sintomas"
-      
-      />
+      <div className="container">
+        <div className="row">
+          
+          {/* COLUMNA IZQUIERDA: EL FORMULARIO */}
+          <div className="one-half column">
+            <Formulario
+              ContenidoH2="Crear mi Cita"
+              Label1="Nombre Mascota"
+              Label2="Nombre Dueño"
+              Label3="Hora"
+              Label4="Sintomas"
+              LabelFecha="Fecha"
+            />
           </div>
+
+          {/* COLUMNA DERECHA: LAS CITAS */}
+          <div className="one-half column">
+            <h2>Administra tus citas</h2>
+            
             <Cita
-            mascota ="jojo"
-            duenio = "Franco"
-            fecha = '12/05/2005'
-            hora = "12:10"
-            sintomas = "dolor de panza"
+              mascota="jojo"
+              duenio="Franco"
+              fecha="12/05/2005"
+              hora="12:10"
+              sintomas="dolor de panza"
             />
-
-               
             <Cita
-            Mascota ="sasa"
-            Dueño = "mati"
-            Fecha = '12/12/2016'
-            Hora = "09:20"
-            Sintomas = "Duerme mucho"
+              mascota="sasa"
+              duenio="mati"
+              fecha="12/12/2016"
+              hora="09:20"
+              sintomas="Duerme mucho"
             />
-
-               
             <Cita
-            Mascota ="popo"
-            Dueño = "Ramiro"
-            Fecha = '20/04/1998'
-            Hora = "15:05"
-            Sintomas = "Parkinson"
+              mascota="popo"
+              duenio="Ramiro"
+              fecha="20/04/1998"
+              hora="15:05"
+              sintomas="Parkinson"
             />
-       
+          </div>
 
-
-
-
+        </div>
+      </div>
     </>
   )
 }
