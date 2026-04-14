@@ -4,29 +4,80 @@ import InputHora from './InputHora';
 import InputTextarea from './InputTextarea';
 import  InputFecha  from "./InputFecha";
 import Buttom from './Buttom';
+import { useEffect, useState } from 'react'
 
-function Formulario({ ContenidoH2, Label1, Label2, Label3, Label4, LabelFecha }) {
+function Formulario({ ContenidoH2, Label1, Label2, Label3, Label4, LabelFecha, setCitas, Citas }) {
+    
+    // 1. Creamos las variables para guardar lo que vas escribiendo
+    const [mascota, setMascota] = useState('');
+    const [duenio, setDuenio] = useState('');
+    const [fecha, setFecha] = useState('');
+    const [hora, setHora] = useState('');
+    const [sintomas, setSintomas] = useState('');
+
+   
+    const agregarConClick = () => {
+     
+        const nuevaCita = {
+            mascota: mascota,
+            duenio: duenio,
+            fecha: fecha,
+            hora: hora,
+            sintomas: sintomas
+        };
+
+       
+        setCitas([...Citas, nuevaCita]);
+
+       
+        setMascota('');
+        setDuenio('');
+        setFecha('');
+        setHora('');
+        setSintomas('');
+    };
+
     return (
         <>
             <h2>{ContenidoH2}</h2>
-            <form>
+            
+            <div>
                 <label>{Label1}</label>
-                <Input ContenidoInput={Label1} />
+                <input 
+                    type="text" 
+                    value={mascota} 
+                    onChange={(e) => setMascota(e.target.value)} 
+                />
                 
                 <label>{Label2}</label>
-                <Input ContenidoInput={Label2} />
+                <input 
+                    type="text" 
+                    value={duenio} 
+                    onChange={(e) => setDuenio(e.target.value)} 
+                />
                
-                 <label>{LabelFecha}</label>
-                <InputFecha ContenidoInput={LabelFecha} />
+                <label>{LabelFecha}</label>
+                <input 
+                    type="date" 
+                    value={fecha} 
+                    onChange={(e) => setFecha(e.target.value)} 
+                />
 
                 <label>{Label3}</label>
-                <InputHora ContenidoInput={Label3} />
+                <input 
+                    type="time" 
+                    value={hora} 
+                    onChange={(e) => setHora(e.target.value)} 
+                />
                 
                 <label>{Label4}</label>
-                <InputTextarea ContenidoInput={Label4} />
+                <textarea 
+                    value={sintomas} 
+                    onChange={(e) => setSintomas(e.target.value)}
+                ></textarea>
                 
-                <Buttom Contenido="Agregar Cita" />
-            </form>
+                <Buttom onClick={agregarConClick} Contenido="Agregar Cita" />
+            </div>
         </>
     );
 }

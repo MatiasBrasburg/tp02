@@ -2,8 +2,18 @@
 import './Cita.css'; 
 
 import Buttom from './Buttom';
+import { useState } from 'react';
 
-function Cita({ mascota, duenio, fecha, hora, sintomas }) {
+function Cita({ mascota, duenio, fecha, hora, sintomas, Citas, setCitas }) {
+  
+  const EliminarCita = () => {
+    const citasRestantes = Citas.filter( cita => 
+        cita.mascota !== mascota || cita.hora !== hora 
+    );
+
+    setCitas(citasRestantes);
+  };
+
   return (
     <div className="cita">
       <p>Mascota: <span>{mascota}</span></p>
@@ -11,8 +21,11 @@ function Cita({ mascota, duenio, fecha, hora, sintomas }) {
       <p>Fecha: <span>{fecha}</span></p>
       <p>Hora: <span>{hora}</span></p>
       <p>Sintomas: <span>{sintomas}</span></p>
-      <Buttom
-      Contenido = "Eliminar"
+      
+   
+      <Buttom 
+        onClick={EliminarCita}
+        Contenido="Eliminar"
       />
     </div>
   );
