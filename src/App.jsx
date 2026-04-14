@@ -53,8 +53,6 @@ function App() {
           {/* COLUMNA DERECHA: LAS CITAS */}
           <div className="one-half column">
             <h2>Administra tus citas</h2>
-            
-            
             {Citas.map((citaActual, index) => (
               <Cita
                 key={index}

@@ -24,10 +24,7 @@ function Cita({ mascota, duenio, fecha, hora, sintomas, Citas, setCitas }) {
       <p>Hora: <span>{hora}</span></p>
       <p>Sintomas: <span>{sintomas}</span></p>
       
-      <Buttom 
-        onClick={EliminarCita}
-        Contenido="Eliminar"
-      />
+      <Buttom onClick={EliminarCita} Contenido="Eliminar" />
     </div>
   );
 }
