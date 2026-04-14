@@ -3,7 +3,7 @@ import './Cita.css';
 
 import Buttom from './Buttom';
 import { useState } from 'react';
-import { configs } from 'eslint-plugin-react-hooks';
+
 
 function Cita({ mascota, duenio, fecha, hora, sintomas, Citas, setCitas }) {
   
