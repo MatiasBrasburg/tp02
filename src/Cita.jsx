@@ -3,15 +3,17 @@ import './Cita.css';
 
 import Buttom from './Buttom';
 import { useState } from 'react';
+import { configs } from 'eslint-plugin-react-hooks';
 
 function Cita({ mascota, duenio, fecha, hora, sintomas, Citas, setCitas }) {
   
   const EliminarCita = () => {
-    const citasRestantes = Citas.filter( cita => 
-        cita.mascota !== mascota || cita.hora !== hora 
-    );
-
-    setCitas(citasRestantes);
+    if (window.confirm("¿Estás seguro que querés eliminar esta cita?")) {
+      const citasRestantes = Citas.filter( cita => 
+          cita.mascota !== mascota || cita.hora !== hora 
+      );
+      setCitas(citasRestantes);
+    }
   };
 
   return (
@@ -22,7 +24,6 @@ function Cita({ mascota, duenio, fecha, hora, sintomas, Citas, setCitas }) {
       <p>Hora: <span>{hora}</span></p>
       <p>Sintomas: <span>{sintomas}</span></p>
       
-   
       <Buttom 
         onClick={EliminarCita}
         Contenido="Eliminar"
@@ -30,5 +31,4 @@ function Cita({ mascota, duenio, fecha, hora, sintomas, Citas, setCitas }) {
     </div>
   );
 }
-
 export default Cita;

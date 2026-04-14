@@ -1,14 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 import Titulo from './Titulo'
 import Formulario from './Formulario';
 import Cita from './Cita';
 
-
-
 function App() {
-  const [count, setCount] = useState(0)
-
   const [Citas, setCitas] = useState([
     {
       "mascota": "jojo",
@@ -31,10 +27,7 @@ function App() {
       "hora": "15:05",
       "sintomas": "Parkinson"
     }
-  ])
-
-
-
+  ]);
 
   return (
     <>
@@ -52,43 +45,28 @@ function App() {
               Label3="Hora"
               Label4="Sintomas"
               LabelFecha="Fecha"
-              setCitas = {Citas}
+              Citas={Citas}
+              setCitas={setCitas}
             />
           </div>
 
           {/* COLUMNA DERECHA: LAS CITAS */}
           <div className="one-half column">
             <h2>Administra tus citas</h2>
-
-            <Cita
-              mascota={Citas[0].mascota}
-              duenio={Citas[0].duenio}
-              fecha={Citas[0].fecha}
-              hora={Citas[0].hora}
-              sintomas={Citas[0].sintomas}
-              Citas = {Citas}
-              SetCitas = {SetCitas}
-            />
-
-            <Cita
-              mascota={Citas[1].mascota}
-              duenio={Citas[1].duenio}
-              fecha={Citas[1].fecha}
-              hora={Citas[1].hora}
-              sintomas={Citas[1].sintomas}
-              Citas = {Citas}
-              SetCitas = {SetCitas}
-            />
-
-            <Cita
-              mascota={Citas[2].mascota}
-              duenio={Citas[2].duenio}
-              fecha={Citas[2].fecha}
-              hora={Citas[2].hora}
-              sintomas={Citas[2].sintomas}
-              Citas = {Citas}
-              SetCitas = {SetCitas}
-            />
+            
+            
+            {Citas.map((citaActual, index) => (
+              <Cita
+                key={index}
+                mascota={citaActual.mascota}
+                duenio={citaActual.duenio}
+                fecha={citaActual.fecha}
+                hora={citaActual.hora}
+                sintomas={citaActual.sintomas}
+                Citas={Citas}
+                setCitas={setCitas}
+              />
+            ))}
           </div>
 
         </div>
@@ -97,4 +75,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

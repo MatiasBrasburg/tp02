@@ -1,8 +1,10 @@
-import './Formulario.css'; // Movemos solo los estilos de la tarjeta a este archivo
+import './Formulario.css'; 
 
-function Buttom({ Contenido }) {
+function Buttom({ Contenido, onClick }) {
   return (
-   <button type="submit" className="u-full-width button-primary">{Contenido}</button>
+   <button type="button" onClick={onClick} className="u-full-width button-primary">
+      {Contenido}
+   </button>
   );
 }
 
